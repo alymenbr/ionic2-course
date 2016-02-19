@@ -5,11 +5,10 @@ import {ListPage} from '../listPage/listPage';
   templateUrl: 'build/pages/newPage/newPage.html'
 })
 export class newPage {
-  constructor( public nav: NavController ){
-
-  }
+  items = ['item1', 'item2', 'item3']
+  constructor( public nav: NavController){}
 
   addListPage() {
-    this.nav.push(ListPage);
+    this.nav.push(ListPage, {itemsKey: this.items});
   }
 }
